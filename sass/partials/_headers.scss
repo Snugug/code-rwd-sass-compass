@@ -9,4 +9,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 
   @include header-emboss($primary);
+
+  @include breakpoint($secondary-colors) {
+    @include header-emboss($secondary);
+  }
 }

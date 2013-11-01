@@ -3,6 +3,9 @@
   @extend %media-shared;
 
   @include media-border($primary);
+  @include breakpoint($secondary-colors) {
+    @include media-border($secondary);
+  }
 }
 
 .carousel {
@@ -10,4 +13,7 @@
   margin-bottom: .5em;
 
   @include media-border($primary);
+  @include breakpoint($secondary-colors) {
+    @include media-border($secondary);
+  }
 }

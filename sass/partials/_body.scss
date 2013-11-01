@@ -4,6 +4,10 @@ body {
 
   @include body-coloring($primary);
 
+  @include breakpoint($secondary-colors) {
+    @include body-coloring($secondary);
+  }
+
   @include breakpoint($font-size-increase) {
     font-size: 1.25em;
   }
