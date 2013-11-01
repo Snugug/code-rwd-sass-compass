@@ -1,5 +1,9 @@
 .media {
-  @include grid-span(5, 6);
+  @include grid-span(2, 1);
+  @include pull(8, 1);
+  clear: none;
+  float: right;
+  margin-right: grid-span(3, 1) + gutter-span($gutters);
 }
 
 .fluid-video {
