@@ -47,6 +47,5 @@ $tertiary-colors: $font-size-increase (orientation landscape), (min-height 603px
 //////////////////////////////
 // Grid
 //////////////////////////////
-$grids: 10;
+$grids: ratio(golden(), 2);
 $gutters: 1/3;
-$output: 'float';
