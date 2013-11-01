@@ -8,6 +8,10 @@ body {
     @include body-coloring($secondary);
   }
 
+  @include breakpoint($tertiary-colors) {
+    @include body-coloring($tertiary);
+  }
+
   @include breakpoint($font-size-increase) {
     font-size: 1.25em;
   }
