@@ -1,5 +1,8 @@
 .media {
-
+  @include breakpoint($one-column-to-two) {
+    @include grid-span(1, 1);
+    clear: left;
+  }
 }
 
 .fluid-video {
