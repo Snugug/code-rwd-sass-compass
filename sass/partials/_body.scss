@@ -3,4 +3,8 @@ body {
   line-height: $line-height;
 
   @include body-coloring($primary);
+
+  @include breakpoint($font-size-increase) {
+    font-size: 1.25em;
+  }
 }
