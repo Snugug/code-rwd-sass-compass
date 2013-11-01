@@ -22,11 +22,24 @@
   @include breakpoint($tertiary-colors) {
     @include media-border($tertiary);
   }
+
+  @include breakpoint($inline-media) {
+    @include layout(2) {
+      @include grid-span(1, 2);
+      @include intrinsic-ratio-ratio(500/332, column-span(1, 1));
+    }
+  }
 }
 
 .carousel {
   @extend %media-shared;
   margin-bottom: .5em;
+  @include breakpoint($inline-media) {
+    @include layout(2) {
+      @include grid-span(1, 1);
+    }
+  }
+
   @include css-carousel-component(5);
 
   @include media-border($primary);
