@@ -1,3 +1,7 @@
+.media {
+  @include grid-span(5, 6);
+}
+
 .fluid-video {
   display: none;
   @extend %media-shared;
