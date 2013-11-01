@@ -32,7 +32,14 @@ $line-height: 1.681em;
 $border-width: .35em;
 
 //////////////////////////////
+// Breakpoint Options
+//////////////////////////////
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
+
+//////////////////////////////
 // Media Queries
 //////////////////////////////
 $font-size-increase: 583px;
 $secondary-colors: orientation portrait;
+$tertiary-colors: $font-size-increase (orientation landscape), (min-height 603px) (orientation portrait), 'no-query' '.lte-ie8';
