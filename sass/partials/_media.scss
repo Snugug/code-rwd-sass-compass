@@ -9,8 +9,8 @@
 }
 
 .fluid-video {
-  display: none;
   @extend %media-shared;
+  @include intrinsic-ratio;
 
   @include media-border($primary);
   @include breakpoint($secondary-colors) {
