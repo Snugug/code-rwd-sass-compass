@@ -44,9 +44,12 @@ $font-size-increase: 583px;
 $secondary-colors: orientation portrait;
 $tertiary-colors: $font-size-increase (orientation landscape), (min-height 603px) (orientation portrait), 'no-query' '.lte-ie8';
 $one-column-to-two: 587px;
+$two-columns-to-three: 957px;
 
 //////////////////////////////
 // Grid
 //////////////////////////////
 $grids: ratio(golden(), 2);
+$grids: add-grid(ratio(golden(), 3) at $two-columns-to-three);
 $gutters: 1/3;
+$gutters: add-gutter(1/9 at $two-columns-to-three);
