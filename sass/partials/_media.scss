@@ -32,7 +32,6 @@
 }
 
 .carousel {
-  @extend %media-shared;
   margin-bottom: .5em;
   @include breakpoint($inline-media) {
     @include layout(2) {
@@ -40,18 +39,46 @@
     }
   }
 
-  @include css-carousel-component(5);
+  @include enhance-with(cssanimations) {
+    @extend %media-shared;
 
-  @include media-border($primary);
-  @include breakpoint($secondary-colors) {
-    @include media-border($secondary);
+    @include css-carousel-component(5);
+
+    @include media-border($primary);
+    @include breakpoint($secondary-colors) {
+      @include media-border($secondary);
+    }
+    @include breakpoint($secondary-colors) {
+      @include media-border($secondary);
+    }
+    @include breakpoint($tertiary-colors) {
+      @include media-border($tertiary);
+    }
   }
-  @include breakpoint($secondary-colors) {
-    @include media-border($secondary);
+
+  @include degrade-from(cssanimations) {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    img {
+      @extend %media-shared;
+      @include media-border($primary);
+      @include breakpoint($secondary-colors) {
+        @include media-border($secondary);
+      }
+      @include breakpoint($secondary-colors) {
+        @include media-border($secondary);
+      }
+      @include breakpoint($tertiary-colors) {
+        @include media-border($tertiary);
+      }
+    }
   }
-  @include breakpoint($tertiary-colors) {
-    @include media-border($tertiary);
-  }
+
+
+
 }
 
 @include css-carousel-animation(5, start);
