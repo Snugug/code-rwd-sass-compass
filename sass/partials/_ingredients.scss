@@ -7,8 +7,6 @@
 }
 
 .ingredients {
-  @include grid-span(3, 3);
-  @include push(2, 1);
 
   ul {
     list-style: none;
