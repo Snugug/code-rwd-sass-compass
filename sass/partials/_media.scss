@@ -3,6 +3,9 @@
     @include grid-span(1, 1);
     clear: left;
   }
+  @include breakpoint($two-columns-to-three) {
+    @include grid-span(1, 1);
+  }
 }
 
 .fluid-video {

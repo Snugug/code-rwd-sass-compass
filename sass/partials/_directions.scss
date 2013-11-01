@@ -2,5 +2,8 @@
   @include breakpoint($one-column-to-two) {
     @include grid-span(1, 2);
   }
+  @include breakpoint($two-columns-to-three) {
+    @include grid-span(1, 3);
+  }
 
 }
