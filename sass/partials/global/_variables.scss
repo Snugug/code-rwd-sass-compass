@@ -43,6 +43,7 @@ $breakpoint-to-ems: true;
 $font-size-increase: 583px;
 $secondary-colors: orientation portrait;
 $tertiary-colors: $font-size-increase (orientation landscape), (min-height 603px) (orientation portrait), 'no-query' '.lte-ie8';
+$one-column-to-two: 587px;
 
 //////////////////////////////
 // Grid
