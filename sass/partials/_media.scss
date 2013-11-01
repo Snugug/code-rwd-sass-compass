@@ -27,6 +27,7 @@
 .carousel {
   @extend %media-shared;
   margin-bottom: .5em;
+  @include css-carousel-component(5);
 
   @include media-border($primary);
   @include breakpoint($secondary-colors) {
@@ -39,3 +40,5 @@
     @include media-border($tertiary);
   }
 }
+
+@include css-carousel-animation(5, start);
