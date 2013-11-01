@@ -19,7 +19,3 @@ section {
 footer {
   @extend %region-padding;
 }
-
-.recipe {
-  @include background-grid;
-}
