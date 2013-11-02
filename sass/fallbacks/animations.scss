@@ -1,0 +1,29 @@
+//////////////////////////////
+// Setup Variables
+//////////////////////////////
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
+$legacy-support-for-mozilla: false;
+
+$jacket: 'no css animations';
+
+//////////////////////////////
+// Tool Import
+//////////////////////////////
+@import 'breakpoint';
+@import 'toolkit/carousel';
+@import 'jacket';
+
+////////////////////////
+// Global Imports
+////////////////////////
+@import 'partials/global/variables';
+@import 'partials/global/functions';
+@import 'partials/global/mixins';
+@import 'partials/global/extendables';
+
+//////////////////////////////
+// Partial Imports
+//////////////////////////////
+@import 'partials/media';
