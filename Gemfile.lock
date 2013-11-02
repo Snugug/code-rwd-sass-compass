@@ -16,6 +16,9 @@ GEM
       compass
     compass-normalize (1.4.3)
       compass (>= 0.12.0)
+    jacket (1.0.0)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
     listen (0.7.3)
     modular-scale (1.0.6)
       compass (>= 0.12.1)
@@ -48,6 +51,7 @@ PLATFORMS
 DEPENDENCIES
   compass (~> 0.13.alpha.4)
   compass-normalize (< 2.0.0)
+  jacket (~> 1.0.0)
   rb-fsevent (~> 0.9)
   sass (~> 3.2.0)
   singularity-extras (< 1.0.0)

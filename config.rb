@@ -2,6 +2,7 @@
 require 'toolkit'
 require 'compass-normalize'
 require 'singularity-extras'
+require 'jacket'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
