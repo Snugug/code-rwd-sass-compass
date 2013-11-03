@@ -1,0 +1,7 @@
+@import "headers/variables";
+@import "headers/mixins";
+@import "headers/extends";
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %header-core;
+}

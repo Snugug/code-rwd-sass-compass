@@ -1,0 +1,7 @@
+$header-extends-extended: false !default;
+
+@if not $header-extends-extended {
+  %header-core {
+    @include header-core(false);
+  }
+}

@@ -1,0 +1,30 @@
+@mixin header-emboss($color: $header-primary-color) {
+  color: lighten(invert($color), 35%);
+  text-shadow: emboss($color);
+}
+
+@mixin header-core($extend: $header-extend) {
+  @if not $extend {
+    font-family: $header-font-family;
+
+    line-height: $header-line-height;
+
+    margin-top: $header-margin-top;
+    margin-bottom: $header-margin-bottom;
+
+    text-transform: $header-text-transform;
+
+    @include header-emboss($header-primary-color);
+
+    @include breakpoint($secondary-colors) {
+      @include header-emboss($header-secondary-color);
+    }
+
+    @include breakpoint($tertiary-colors) {
+      @include header-emboss($header-tertiary-color);
+    }
+  }
+  @else {
+    @extend %header-core;
+  }
+}
