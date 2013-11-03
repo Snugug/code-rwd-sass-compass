@@ -1,15 +1,24 @@
 //////////////////////////////
-// Setup Variables
+// Cross-Browser Options
 //////////////////////////////
 $legacy-support-for-ie6: false;
 $legacy-support-for-ie7: false;
 $legacy-support-for-ie8: false;
 $legacy-support-for-mozilla: false;
 
+//////////////////////////////
+// Jacket Wrappers
+//////////////////////////////
 $jacket: 'no css animations';
 
 //////////////////////////////
-// Tool Import
+// Breakpoint Settings
+//////////////////////////////
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
+
+//////////////////////////////
+// Compass Extensions
 //////////////////////////////
 @import 'breakpoint';
 @import 'toolkit/carousel';
@@ -18,10 +27,10 @@ $jacket: 'no css animations';
 ////////////////////////
 // Global Imports
 ////////////////////////
-@import 'partials/global/variables';
-@import 'partials/global/functions';
-@import 'partials/global/mixins';
-@import 'partials/global/extendables';
+@import 'global/variables/all';
+@import 'global/functions/all';
+@import 'global/mixins/all';
+@import 'global/extends/all';
 
 //////////////////////////////
 // Partial Imports

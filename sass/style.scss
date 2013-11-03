@@ -5,17 +5,48 @@
 ////////////////////////
 
 //////////////////////////////
+// Cross-Browser Options
+//////////////////////////////
+$legacy-support-for-ie6: false;
+$legacy-support-for-ie7: false;
+$legacy-support-for-ie8: false;
+$legacy-support-for-mozilla: false;
+
+//////////////////////////////
 // Jacket Wrappers
 //////////////////////////////
 $jacket: 'base';
 
 //////////////////////////////
-// Base Import
+// Breakpoint Settings
 //////////////////////////////
-@import 'partials/global/base';
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
 
 //////////////////////////////
-// Import Partials
+// Import Normalize
+//////////////////////////////
+@import 'normalize';
+
+////////////////////////
+// Compass Extensions
+////////////////////////
+@import 'singularitygs';
+@import 'toolkit';
+@import 'toolkit/carousel';
+@import 'singularity-extras/generators';
+@import 'jacket';
+
+//////////////////////////////
+// Global Imports
+//////////////////////////////
+@import "global/variables/all";
+@import "global/functions/all";
+@import "global/mixins/all";
+@import "global/extends/all";
+
+//////////////////////////////
+// Partial Imports
 //////////////////////////////
 @import "partials/body";
 @import "partials/headers";
