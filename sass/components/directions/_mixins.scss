@@ -1,0 +1,13 @@
+@mixin directions-core($extend: $directions-extend) {
+  @if not $extend {
+    @include breakpoint($one-column-to-two) {
+      @include grid-span(1, 2);
+    }
+    @include breakpoint($two-columns-to-three) {
+      @include grid-span(1, 3);
+    }
+  }
+  @else {
+    @extend %directions-core;
+  }
+}

@@ -1,0 +1,7 @@
+@import "directions/variables";
+@import "directions/mixins";
+@import "directions/extends";
+
+.directions {
+  @extend %directions-core;
+}

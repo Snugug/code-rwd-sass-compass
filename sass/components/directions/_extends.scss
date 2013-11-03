@@ -1,0 +1,9 @@
+$directions-extends-extended: false !default;
+
+@if not $directions-extends-extended {
+  %directions-core {
+    @include directions-core(false);
+  }
+}
+
+$directions-extends-extended: true;
