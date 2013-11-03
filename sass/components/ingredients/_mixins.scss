@@ -1,0 +1,18 @@
+@mixin ingredients-core($extend: $ingredients-extend) {
+  @if not $extend {
+    @include breakpoint($one-column-to-two) {
+      @include grid-span(1, 1);
+    }
+    @include breakpoint($two-columns-to-three) {
+      @include grid-span(1, 2);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: $ingredients-padding-left;
+    }
+  }
+  @else {
+    @extend %ingredients-core;
+  }
+}

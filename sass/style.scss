@@ -48,9 +48,10 @@ $breakpoint-to-ems: true;
 //////////////////////////////
 // Partial Imports
 //////////////////////////////
-@import "partials/body";
-@import "partials/headers";
-@import "partials/regions";
-@import "partials/ingredients";
-@import "partials/directions";
-@import "partials/media";
+@import "components/body";
+@import "components/headers";
+@import "components/regions";
+@import "components/recipe";
+@import "components/ingredients";
+@import "components/directions";
+@import "components/media";

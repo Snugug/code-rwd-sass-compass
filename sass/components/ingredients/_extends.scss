@@ -1,0 +1,9 @@
+$ingredients-extends-extended: false !default;
+
+@if not $ingredients-extends-extended {
+  %ingredients-core {
+    @include ingredients-core(false);
+  }
+}
+
+$ingredients-extends-extended: true;

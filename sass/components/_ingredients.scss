@@ -1,0 +1,7 @@
+@import "ingredients/variables";
+@import "ingredients/mixins";
+@import "ingredients/extends";
+
+.ingredients {
+  @extend %ingredients-core;
+}

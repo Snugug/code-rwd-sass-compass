@@ -1,0 +1,14 @@
+@mixin recipe-core($extend: $recipe-extend) {
+  @if not $extend {
+    footer {
+      font-style: $recipe-font-style;
+
+      span {
+        margin-right: $recipe-margin-right;
+      }
+    }
+  }
+  @else {
+    @extend %recipe-core;
+  }
+}

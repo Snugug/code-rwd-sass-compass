@@ -1,0 +1,9 @@
+$recipe-extends-extended: false !default;
+
+@if not $recipe-extends-extended {
+  %recipe-core {
+    @include recipe-core(false);
+  }
+}
+
+$recipe-extends-extended: true;

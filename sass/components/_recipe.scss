@@ -1,0 +1,7 @@
+@import "recipe/variables";
+@import "recipe/mixins";
+@import "recipe/extends";
+
+.recipe {
+  @extend %recipe-core;
+}
