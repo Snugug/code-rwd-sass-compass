@@ -1,0 +1,4 @@
+$grids: ratio(golden(), 2);
+$grids: add-grid(ratio(golden(), 3) at $two-columns-to-three);
+$gutters: 1/3;
+$gutters: add-gutter(1/9 at $two-columns-to-three);

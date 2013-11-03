@@ -1,0 +1,4 @@
+@function emboss($color) {
+  $shade: dark($color);
+  @return -1px 0 $shade, 0 1px $shade, 1px 0 $shade, 0 -1px $shade, 3px 2px 0px $shade;
+}

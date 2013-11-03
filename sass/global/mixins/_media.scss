@@ -1,0 +1,5 @@
+@mixin media-border($color, $width: $border-width) {
+  border-width: $width 0 $width 0;
+  border-color: $color;
+  border-radius: $width;
+}

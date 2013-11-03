@@ -1,0 +1,4 @@
+@mixin body-coloring($color) {
+  background: light($color);
+  color: dark($color);
+}

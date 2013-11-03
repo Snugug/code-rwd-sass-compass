@@ -1,0 +1,4 @@
+@mixin header-emboss($color) {
+  color: lighten(invert($color), 35%);
+  text-shadow: emboss($color);
+}

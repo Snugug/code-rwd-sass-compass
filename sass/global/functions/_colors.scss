@@ -1,0 +1,7 @@
+@function light($color) {
+  @return tint($color, 85%);
+}
+
+@function dark($color) {
+  @return shade($color, 85%);
+}

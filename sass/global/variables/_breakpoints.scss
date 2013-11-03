@@ -1,0 +1,6 @@
+$font-size-increase: 583px;
+$secondary-colors: orientation portrait;
+$tertiary-colors: $font-size-increase (orientation landscape), (min-height 603px) (orientation portrait), 'no-query' '.no-mediaqueries';
+$one-column-to-two: 587px;
+$two-columns-to-three: 957px;
+$inline-media: 426px $one-column-to-two;
