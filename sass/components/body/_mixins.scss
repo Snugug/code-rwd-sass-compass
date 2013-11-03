@@ -1,0 +1,29 @@
+@mixin body-coloring($color) {
+  background: light($color);
+  color: dark($color);
+}
+
+@mixin body-core($extend: $body-core-extend) {
+  @if not $extend {
+    font-family: $body-font-family;
+    line-height: $body-line-height;
+
+    @include body-coloring($body-primary-color);
+
+    @include breakpoint($secondary-colors) {
+      @include body-coloring($body-secondary-color);
+    }
+
+    @include breakpoint($tertiary-colors) {
+      @include body-coloring($body-tertiary-color);
+    }
+
+    @include breakpoint($font-size-increase) {
+      font-size: $body-increased-font-size;
+    }
+  }
+  @else {
+    @extend %body-core;
+  }
+
+}

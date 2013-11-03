@@ -1,0 +1,7 @@
+@import "body/variables";
+@import "body/mixins";
+@import "body/extends";
+
+body {
+  @extend %body-core;
+}

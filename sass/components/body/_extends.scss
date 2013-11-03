@@ -1,0 +1,7 @@
+$body-extends-extended: false !default;
+
+@if not $body-extends-extended {
+  %body-core {
+    @include body-core(false);
+  }
+}
