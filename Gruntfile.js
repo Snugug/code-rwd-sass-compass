@@ -2,40 +2,43 @@
   'use strict';
 
   module.exports = function (grunt) {
+    // Read in User Config
+    var userConfig = grunt.file.readYAML('config.yml');
+
     // Grunt task configuration
     grunt.initConfig({
       // Server
       connect: {
         server: {
           options: {
-            port: 9001,
-            livereload: 9002,
+            port: userConfig.server.port,
+            livereload: userConfig.server.livereload,
             base: '.'
           }
         }
       },
       open: {
         launch: {
-          path: 'http://localhost:9001'
+          path: 'http://localhost:' + userConfig.server.port
         }
       },
       // Watch
       watch: {
         options: {
-          livereload: 9002
+          livereload: userConfig.server.livereload
         },
         scripts: {
-          files: ['js/**/*.js']
+          files: [userConfig.dirs.scripts + '/**/*.js']
         },
         images: {
-          files: ['img/**/*']
+          files: [userConfig.dirs.images + '/**/*']
         },
         css: {
-          files: ['css/**/*.css']
+          files: [userConfig.dirs.css + 'css/**/*.css']
         },
         html: {
           files: [
-            './**/*.html',
+            userConfig.dirs.root + '/**/*.html',
             '!node_modules'
           ]
         }

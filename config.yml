@@ -1,0 +1,21 @@
+dirs:
+  root: .
+  css: css
+  sass: sass
+  images: images
+  scripts: js
+  fonts: fonts
+
+compass:
+  extensions:
+    - toolkit
+    - compass-normalize
+    - singularity-extras
+    - jacket
+  import_paths:
+    - bower_components/eq.js/sass
+  relative_assets: true
+
+server:
+  port: 9001
+  livereload: 9002
