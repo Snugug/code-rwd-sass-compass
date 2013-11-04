@@ -35,7 +35,14 @@
           files: [userConfig.dirs.images + '/**/*']
         },
         css: {
-          files: [userConfig.dirs.css + 'css/**/*.css']
+          files: [userConfig.dirs.css + '/**/*.css']
+        },
+        sass: {
+          files: [userConfig.dirs.sass + '/**/*.scss'],
+          tasks: ['compass:dev'],
+          options: {
+            livereload: false
+          }
         },
         html: {
           files: [
@@ -53,6 +60,24 @@
           userConfig.dirs.scripts + '/**/*.js',
           '!' + userConfig.dirs.scripts + '/**/*.min.js'
         ]
+      },
+      compass: {
+        options: {
+          sassDir: userConfig.dirs.sass,
+          cssDir: userConfig.dirs.css,
+          imagesDir: userConfig.dirs.images,
+          javascriptsDir: userConfig.dirs.scripts,
+          fontsDir: userConfig.dirs.fonts,
+          relativeAssets: userConfig.compass.relative_assets,
+          require: userConfig.compass.extensions,
+          importPath: userConfig.compass.import_paths,
+          bundleExec: true
+        },
+        dev: {
+          options: {
+            environment: 'development'
+          }
+        }
       }
 
 
