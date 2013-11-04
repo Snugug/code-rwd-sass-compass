@@ -7,11 +7,14 @@ dirs:
   fonts: fonts
 
 compass:
-  extensions:
-    - toolkit
-    - compass-normalize
-    - singularity-extras
-    - jacket
+  dependencies:
+    sass: '~>3.2.0'
+    toolkit: '<2.0.0'
+    compass-normalize: "<2.0.0"
+    compass: '~>0.13.alpha.4'
+    rb-fsevent: "~>0.9"
+    singularity-extras: "<1.0.0"
+    jacket: "~>1.0.0"
   import_paths:
     - bower_components/eq.js/sass
   relative_assets: true
