@@ -9,3 +9,7 @@
 .recipe {
   @extend %recipe-core;
 }
+
+.metadata {
+  @extend %recipe-metadata;
+}

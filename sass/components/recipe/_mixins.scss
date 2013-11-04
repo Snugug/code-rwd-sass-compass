@@ -8,15 +8,28 @@
         @extend %region-core;
       }
     }
-    footer {
-      font-style: $recipe-font-style;
+  }
+  @else {
+    @extend %recipe-core;
+  }
+}
 
+@mixin recipe-metadata($extend: $recipe-extend) {
+  @if not $extend {
+    font-style: $recipe-font-style;
+
+    span {
+      display: block;
+    }
+
+    @include eq('inline') {
       span {
+        display: inline;
         margin-right: $recipe-margin-right;
       }
     }
   }
   @else {
-    @extend %recipe-core;
+    @extend %recipe-metadata;
   }
 }

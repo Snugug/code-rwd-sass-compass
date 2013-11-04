@@ -4,6 +4,10 @@ $recipe-extends-extended: false !default;
   %recipe-core {
     @include recipe-core(false, true);
   }
+
+  %recipe-metadata {
+    @include recipe-metadata(false);
+  }
 }
 
 $recipe-extends-extended: true;
