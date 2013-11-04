@@ -1,0 +1,139 @@
+@mixin media-border($color, $width: $media-border-width) {
+  border-width: $width 0 $width 0;
+  border-color: $color;
+  border-radius: $width;
+}
+
+@mixin media-shared($extend: $media-extend) {
+  @if not $extend {
+    border-style: $media-border-style;
+    margin: $media-shared-margin;
+  }
+  @else {
+    @extend %media-shared;
+  }
+}
+
+@mixin media-core($extend: $media-extend, $extend-region: $media-extend-region) {
+  @if not $extend {
+    @include jacket('base') {
+      @if not $extend-region {
+        @include region-core(false);
+      }
+      @else {
+        @extend %region-core;
+      }
+
+      @include breakpoint($one-column-to-two) {
+        @include grid-span(1, 1);
+        clear: left;
+      }
+      @include breakpoint($two-columns-to-three) {
+        @include grid-span(1, 1);
+      }
+    }
+  }
+  @else {
+    @extend %media-core;
+  }
+}
+
+@mixin media-video-core($extend: $media-extend, $extend-shared: $media-extend-shared) {
+  @if not $extend {
+    @include jacket('base') {
+      @if not $extend-shared {
+        @include media-shared(false);
+      }
+      @else {
+        @extend %media-shared;
+      }
+      @include intrinsic-ratio;
+
+      @include media-border($media-primary-color);
+      @include breakpoint($secondary-colors) {
+        @include media-border($media-secondary-color);
+      }
+      @include breakpoint($secondary-colors) {
+        @include media-border($media-secondary-color);
+      }
+      @include breakpoint($tertiary-colors) {
+        @include media-border($media-tertiary-color);
+      }
+
+      @include breakpoint($inline-media) {
+        @include layout(2) {
+          @include grid-span(1, 2);
+          @include intrinsic-ratio-ratio(500/332, column-span(1, 1));
+        }
+      }
+    }
+  }
+  @else {
+    @extend %media-video-core;
+  }
+}
+
+@mixin media-carousel-core($extend: $media-extend, $extend-shared: $media-extend-shared) {
+  @if not $extend {
+    @include jacket('base')  {
+      margin-bottom: $media-carousel-margin-bottom;
+      @include breakpoint($inline-media) {
+        @include layout(2) {
+          @include grid-span(1, 1);
+        }
+      }
+    }
+
+    @include jacket('css animations') {
+      @if not $extend-shared {
+        @include media-shared(false);
+      }
+      @else {
+        @extend %media-shared;
+      }
+
+      @include css-carousel-component($media-carousel-items);
+
+      @include media-border($media-primary-color);
+      @include breakpoint($secondary-colors) {
+        @include media-border($media-secondary-color);
+      }
+      @include breakpoint($secondary-colors) {
+        @include media-border($media-secondary-color);
+      }
+      @include breakpoint($tertiary-colors) {
+        @include media-border($media-tertiary-color);
+      }
+    }
+
+    @include jacket('no css animations') {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        @if not $extend-shared {
+          @include media-shared(false);
+        }
+        @else {
+          @extend %media-shared;
+        }
+
+        @include media-border($media-primary-color);
+        @include breakpoint($secondary-colors) {
+          @include media-border($media-secondary-color);
+        }
+        @include breakpoint($secondary-colors) {
+          @include media-border($media-secondary-color);
+        }
+        @include breakpoint($tertiary-colors) {
+          @include media-border($media-tertiary-color);
+        }
+      }
+    }
+  }
+  @else {
+    @extend %media-carousel-core;
+  }
+}

@@ -1,0 +1,24 @@
+@import "regions/variables";
+@import "regions/mixins";
+@import "regions/extends";
+
+@import "media/variables";
+@import "media/mixins";
+@import "media/extends";
+
+.media {
+  @extend %media-core !optional;
+}
+
+.fluid-video {
+  @extend %media-video-core !optional;
+}
+
+
+.carousel {
+  @extend %media-carousel-core;
+}
+
+@include jacket('css animations') {
+  @include css-carousel-animation($media-carousel-items, $media-carousel-animation);
+}

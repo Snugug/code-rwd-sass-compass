@@ -1,0 +1,21 @@
+$media-extends-extended: false !default;
+
+@if not $media-extends-extended {
+  %media-shared {
+    @include media-shared(false);
+  }
+
+  %media-core {
+    @include media-core(false);
+  }
+
+  %media-video-core {
+    @include media-video-core(false, true);
+  }
+
+  %media-carousel-core {
+    @include media-carousel-core(false, true);
+  }
+}
+
+$media-extends-extended: true;
