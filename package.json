@@ -1,0 +1,22 @@
+{
+  "name": "code-rwd-sass-compass",
+  "version": "0.0.0",
+  "description": "Code for RWD Training",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Snugug/code-rwd-sass-compass.git"
+  },
+  "author": "Sam Richard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Snugug/code-rwd-sass-compass/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-open": "~0.2.2"
+  }
+}
