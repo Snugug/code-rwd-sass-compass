@@ -28,7 +28,8 @@
           livereload: userConfig.server.livereload
         },
         scripts: {
-          files: [userConfig.dirs.scripts + '/**/*.js']
+          files: [userConfig.dirs.scripts + '/**/*.js'],
+          tasks: ['jshint']
         },
         images: {
           files: [userConfig.dirs.images + '/**/*']
@@ -42,6 +43,16 @@
             '!node_modules'
           ]
         }
+      },
+      // JSHint
+      jshint: {
+        options: {
+          jshintrc: '.jshintrc'
+        },
+        all: [
+          userConfig.dirs.scripts + '/**/*.js',
+          '!' + userConfig.dirs.scripts + '/**/*.min.js'
+        ]
       }
 
 
