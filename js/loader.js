@@ -1,4 +1,4 @@
-(function () {
+(function (Modernizr) {
   Modernizr.load({
     test: Modernizr.cssanimations,
     yep: '../css/enhancements/animations.css',
