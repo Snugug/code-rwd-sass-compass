@@ -1,0 +1,15 @@
+@import "regions/variables";
+@import "regions/mixins";
+@import "regions/extends";
+
+main {
+  @extend %region-main;
+}
+
+section {
+  @extend %region-core;
+}
+
+footer {
+  @extend %region-core;
+}

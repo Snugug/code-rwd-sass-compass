@@ -1,0 +1,13 @@
+$regions-extends-extended: false !default;
+
+@if not $regions-extends-extended {
+  %region-core {
+    @include region-core(false);
+  }
+
+  %region-main {
+    @include region-main(false);
+  }
+}
+
+$regions-extends-extended: true;

@@ -1,0 +1,19 @@
+@mixin region-core($extend: $region-extend) {
+  @if not $extend {
+    padding: $region-padding;
+  }
+  @else {
+    @extend %region-core;
+  }
+}
+
+@mixin region-main($extend: $region-extend) {
+  @if not $extend {
+    display: block;
+    max-width: $region-max-width;
+    margin: 0 auto;
+  }
+  @else {
+    @extend %region-main;
+  }
+}
