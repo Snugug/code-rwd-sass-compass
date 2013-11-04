@@ -1,5 +1,13 @@
-@mixin recipe-core($extend: $recipe-extend) {
+@mixin recipe-core($extend: $recipe-extend, $region-extend: $recipe-extend-region) {
   @if not $extend {
+    > h1 {
+      @if not $region-extend {
+        @include region-core(false);
+      }
+      @else {
+        @extend %region-core;
+      }
+    }
     footer {
       font-style: $recipe-font-style;
 
