@@ -85,6 +85,81 @@
           options: {
             environment: 'development'
           }
+        },
+        dist: {
+          options: {
+            environment: 'production'
+          }
+        }
+      },
+      // Uglify
+      uglify: {
+        dist: {
+          options: {
+            mangle: true,
+            compress: true,
+          },
+          files: [{
+            expand: true,
+            cwd: userConfig.dirs.scripts,
+            src: ['**/*.js', '!**/*.min.js'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.scripts,
+            ext: '.js'
+          }]
+        }
+      },
+      // Image Min
+      imagemin: {
+        dist: {
+          options: {
+            optimizationLevel: 3
+          },
+          files: [{
+            expand: true,
+            cwd: userConfig.dirs.images,
+            src: ['**/*.png', '**/*.jpg', '**/*.jpeg'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.images
+          }]
+        }
+      },
+      // SVG Min
+      svgmin: {
+        dist: {
+          files: [{
+            expand: true,
+            cwd: userConfig.dirs.images,
+            src: '**/*.svg',
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.images
+          }]
+        }
+      },
+      // Copy
+      copy: {
+        dist: {
+          files: [{
+            expand: true,
+            cwd: userConfig.dirs.root,
+            src: ['**/*.html', '!node_modules/**/*.html', '!vendor/**/*.html', 'humans.txt', 'bower_components/**/*.*'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.root
+          },
+          {
+            expand: true,
+            cwd: userConfig.dirs.images,
+            src: ['**/*.*', '!**/*.png', '!**/*.jpg', '!**/*.jpeg', '!**/*.svg'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.images
+          },
+          {
+            expand: true,
+            cwd: userConfig.dirs.css,
+            src: ['**/*.css'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.css
+          },
+          {
+            expand: true,
+            cwd: userConfig.dirs.scripts,
+            src: ['**/*.min.js'],
+            dest: userConfig.dirs.export + '/' + userConfig.dirs.scripts
+          }]
         }
       },
       //Exec
@@ -93,6 +168,18 @@
           command: 'bundle install',
           stdout: true,
           stderr: true
+        }
+      },
+      // Concurrent
+      concurrent: {
+        options: {
+          logConcurrentOutput: true
+        },
+        styles: {
+          tasks: ['uglify:dist', 'compass:dist']
+        },
+        assets: {
+          tasks: ['copy:dist', 'imagemin:dist', 'svgmin:dist']
         }
       }
 
@@ -124,6 +211,13 @@
     //////////////////////////////
     grunt.registerTask('default', function () {
       console.log('This runs when you run `grunt`');
+    });
+
+    //////////////////////////////
+    // Build Task
+    //////////////////////////////
+    grunt.registerTask('build', function () {
+      grunt.task.run(['bundler', 'jshint', 'concurrent:styles', 'concurrent:assets']);
     });
 
     //////////////////////////////
