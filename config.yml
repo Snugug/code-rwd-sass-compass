@@ -29,6 +29,5 @@ bump:
     - package.json
     - bower.json
   commit: true
-  commitFiles: '-a'
   createTag: true
   push: true
