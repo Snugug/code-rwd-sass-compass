@@ -28,7 +28,7 @@ bump:
   files:
     - package.json
     - bower.json
-  commit: false
+  commit: true
   commitFiles: -a
-  createTag: false
-  push: false
+  createTag: true
+  push: true
