@@ -184,16 +184,15 @@
       },
       // Bump
       bump: {
-        options: {
-          files: userConfig.bump.files,
-          commit: userConfig.bump.commit,
-          commitFiles: userConfig.bump.commitFiles,
-          createTag: userConfig.bump.createTag,
-          push: userConfig.bump.push
-        }
+      	options: {
+      	  files: userConfig.bump.files,
+      	  commit: userConfig.bump.commit,
+      	  commitFiles: userConfig.bump.commitFiles,
+      	  createTag: userConfig.bump.createTag,
+      	  push: userConfig.bump.push,
+      	  pushTo: 'origin'
+      	}
       }
-
-
     });
 
     // Use matchdep to load all Grunt tasks from package.json
