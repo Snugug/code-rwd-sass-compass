@@ -5,6 +5,7 @@ dirs:
   images: images
   scripts: js
   fonts: fonts
+  export: export
 
 compass:
   dependencies:
