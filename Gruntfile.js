@@ -187,7 +187,7 @@
       	options: {
       	  files: userConfig.bump.files,
       	  commit: userConfig.bump.commit,
-      	  commitFiles: userConfig.bump.commitFiles,
+      	  commitFiles: ['-a'],
       	  createTag: userConfig.bump.createTag,
       	  push: userConfig.bump.push,
       	  pushTo: 'origin'
