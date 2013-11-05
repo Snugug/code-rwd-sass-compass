@@ -181,6 +181,16 @@
         assets: {
           tasks: ['copy:dist', 'imagemin:dist', 'svgmin:dist']
         }
+      },
+      // Bump
+      bump: {
+        options: {
+          files: userConfig.bump.files,
+          commit: userConfig.bump.commit,
+          commitFiles: userConfig.bump.commitFiles,
+          createTag: userConfig.bump.createTag,
+          push: userConfig.bump.push
+        }
       }
 
 
