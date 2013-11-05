@@ -23,3 +23,12 @@ compass:
 server:
   port: 9001
   livereload: 9002
+
+bump:
+  files:
+    - package.json
+    - bower.json
+  commit: false
+  commitFiles: -a
+  createTag: false
+  push: false
