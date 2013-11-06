@@ -6,9 +6,6 @@
   @include breakpoint($secondary-colors) {
     @include media-border($secondary);
   }
-  @include breakpoint($secondary-colors) {
-    @include media-border($secondary);
-  }
   @include breakpoint($tertiary-colors) {
     @include media-border($tertiary);
   }
@@ -19,9 +16,6 @@
   margin-bottom: .5em;
 
   @include media-border($primary);
-  @include breakpoint($secondary-colors) {
-    @include media-border($secondary);
-  }
   @include breakpoint($secondary-colors) {
     @include media-border($secondary);
   }
